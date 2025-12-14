@@ -25,6 +25,7 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
    git add . && git commit -m "<type>: <subject>" && git push origin HEAD
 
 4. **プルリクエスト作成**
+   - [ ] **注意**: `push` が完全に完了するのを待ってから実行すること。
    - [ ] GitHub CLI で PR を作成する。タイトルと本文は英語で具体的に記述。
    // turbo
    gh pr create --title "feat: Add feature X" --body "Description of changes"
