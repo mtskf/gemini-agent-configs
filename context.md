@@ -14,9 +14,8 @@ AIエージェント向けクイックリファレンス。
 3. `docs/DECISIONS.md` - 最近の設計決定 (最新3-5件)
 
 ## 現在のフォーカス (Current Focus)
-- Obsidian互換性 (見出しテキストベースのリンク)
-- ネイティブ脚注サポート (`[^id]` 構文)
-- 堅牢なEPUB解析
+- (No active focus - waiting for next task)
+
 
 ## 既知の制限事項
 - 見出しテキストが重複するとリンクが曖昧になる (最初のマッチが優先)
