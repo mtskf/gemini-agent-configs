@@ -28,7 +28,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 ## 3. 自動化ワークフロー (Automation Workflows)
 以下のトリガーに応じて、`.agent/workflows/` 内の対応するワークフローを実行すること。
 
-- **タスク開始 (Start Task)**: トリガー: "機能追加", "バグ修正", "Fix bug", "Add feature" → `.agent/workflows/start_task.md`
+- **タスク開始 (Start Task)**: トリガー: "機能追加", "バグ修正", "変更", "修正", "更新", "Fix", "Add", "Update", "Change", "Modify" → `.agent/workflows/start_task.md`
 - **タスク完了 (Finalize Task)**: トリガー: "完了", "Done", "Finish" → `.agent/workflows/finalize_task.md`
 - **同期・クリーンアップ (Sync)**: トリガー: "Sync", "Pull", "同期", "片付け" → `.agent/workflows/sync_main.md`
 - **リリース (Release)**: トリガー: "Release", "Publish", "リリース" → `.agent/workflows/release.md`
