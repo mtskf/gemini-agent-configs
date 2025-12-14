@@ -1,34 +1,33 @@
-# epub2md Agent Configs
+# epub2md エージェント設定
+[epub2md](https://github.com/mtskf/EPUB-to-Markdown-Converter) プロジェクトで活動する AIエージェント (Antigravity/Gemini) のためのプライベート設定リポジトリです。
 
-Private configuration repository for the AI Agent (Antigravity/Gemini) working on the [epub2md](https://github.com/mtskf/EPUB-to-Markdown-Converter) project.
+このリポジトリには、AIのペルソナや開発プロセスを定義する永続的なコンテキスト、ルール、ワークフローが含まれています。
 
-This repository contains the persistent context, rules, and workflows that define the AI's persona and development process.
+## 📂 構造
 
-## 📂 Structure
+- **`rules.md`**: AIの振る舞いを決定する唯一の正解 (SSOT)。以下を含みます：
+  - プロジェクトのビジョンと哲学 ("Zero manual edits")
+  - 自動化ルール (ワークフローのトリガーワード)
+  - ペルソナ (Proactive Tech Lead, 日本語でのコミュニケーション)
+  - 開発ガイドライン (テストファースト, クリーンなリポジトリ)
 
-- **`rules.md`**: The single source of truth for the AI's behavior. Contains:
-  - Project Vision & Philosophy ("Zero manual edits")
-  - Automation Rules (Trigger words for workflows)
-  - Persona (Proactive Tech Lead, Japanese communication)
-  - Development Guidelines (Test-first, Clean repo)
-  
-- **`workflows/`**: Automation scripts (Markdown definition) for common tasks.
-  - `start_task.md`: Branch creation logic.
-  - `finalize_task.md`: PR creation, testing, docs update logic.
-  - `release.md`: Semantic versioning and GitHub Release automation.
+- **`workflows/`**: 共通タスクのための自動化スクリプト (Markdown定義)。
+  - `start_task.md`: ブランチ作成ロジック
+  - `finalize_task.md`: PR作成、テスト、ドキュメント更新ロジック
+  - `release.md`: セマンティックバージョニングとGitHubリリース自動化
 
-## 🚀 Setup
+## 🚀 セットアップ
 
-To use these configs on a new machine:
+新しいマシンでこれらの設定を使用するには：
 
 ```bash
-# 1. Clone the main project
+# 1. メインプロジェクトをクローン
 git clone https://github.com/mtskf/EPUB-to-Markdown-Converter.git
 cd EPUB-to-Markdown-Converter
 
-# 2. Clone this config repo into .agent/ (ignored by main repo)
+# 2. この設定リポジトリを .agent/ にクローン (メインリポジトリからは無視されます)
 git clone git@github.com:mtskf/epub2md-agent-configs.git .agent
 ```
 
-## 🛡 Privacy
-This repository is **Private**. It allows sharing the AI's "Secret Sauce" (custom prompts and contexts) across machines without exposing them in the public `epub2md` repository.
+## 🛡 プライバシー
+このリポジトリは **Private** です。AIの「秘伝のタレ」（カスタムプロンプトやコンテキスト）を公開 `epub2md` リポジトリに晒すことなく、複数のマシン間で共有することを可能にします。

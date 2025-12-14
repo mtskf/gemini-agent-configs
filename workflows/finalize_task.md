@@ -5,9 +5,13 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
 このワークフローは、変更のコミットからプルリクエストの作成までを自動化します。
 
 1. **ドキュメント更新**
-   - [ ] `HISTORY.md` に変更内容を追記。
-   - [ ] **機能追加・変更があった場合、`README.md` を更新する。**
-   - [ ] アーキテクチャ変更があった場合、`ARCHITECTURE.md` を更新する。
+   - [ ] `docs/CHANGELOG.md` の [Unreleased] セクションに変更内容を追記。
+   - [ ] 重要な教訓があれば `docs/dev/LESSONS.md` に抽出。
+   - [ ] アーキテクチャ変更があれば `docs/DECISIONS.md` に ADR を追加。
+   - [ ] 設計が変わった場合、`docs/ARCHITECTURE.md` を更新。
+   - [ ] 機能追加・変更があった場合、`README.md` を更新。
+   - [ ] `docs/dev/LESSONS.md` を整理し、陳腐化した項目をアーカイブまたは削除。
+   - [ ] `.agent/context.md` の "Current Focus" から完了した項目を削除。
 
 2. **動作確認**
    - [ ] テスト実行。
@@ -21,6 +25,6 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
    git add . && git commit -m "<type>: <subject>" && git push origin HEAD
 
 4. **プルリクエスト作成**
-   - [ ] GitHub CLI で PR を作成する。タイトルと本文はコミット内容から生成させる。
+   - [ ] GitHub CLI で PR を作成する。タイトルと本文は英語で具体的に記述。
    // turbo
-   gh pr create --fill
+   gh pr create --title "feat: Add feature X" --body "Description of changes"
