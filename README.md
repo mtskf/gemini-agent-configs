@@ -1,33 +1,35 @@
-# epub2md エージェント設定
-[epub2md](https://github.com/mtskf/EPUB-to-Markdown-Converter) プロジェクトで活動する AIエージェント (Antigravity/Gemini) のためのプライベート設定リポジトリです。
+# AIエージェント設定 (AI Agent Configuration)
 
-このリポジトリには、AIのペルソナや開発プロセスを定義する永続的なコンテキスト、ルール、ワークフローが含まれています。
+AIエージェント (Antigravity/Gemini) のためのプライベート設定リポジトリです。
+プロジェクトのルートディレクトリに `.agent/` として配置し、AIのペルソナ、運用ルール、ワークフローを定義します。
 
 ## 📂 構造
 
-- **`rules.md`**: AIの振る舞いを決定する唯一の正解 (SSOT)。以下を含みます：
-  - プロジェクトのビジョンと哲学 ("Zero manual edits")
-  - 自動化ルール (ワークフローのトリガーワード)
-  - ペルソナ (Proactive Tech Lead, 日本語でのコミュニケーション)
-  - 開発ガイドライン (テストファースト, クリーンなリポジトリ)
+- **`context.md`**: **プロジェクト固有のコンテキスト**。
+  - プロジェクト名、バージョン、ステータス
+  - ビジョン、価値観、設計哲学
+  - 必読ドキュメントやファイルリファレンス
+  - ※このファイルはプロジェクトごとに編集してください。
 
-- **`workflows/`**: 共通タスクのための自動化スクリプト (Markdown定義)。
-  - `start_task.md`: ブランチ作成ロジック
-  - `finalize_task.md`: PR作成、テスト、ドキュメント更新ロジック
-  - `release.md`: セマンティックバージョニングとGitHubリリース自動化
+- **`rules.md`**: **エージェントの行動規範 (Generic Rules)**。
+  - 共通のAIペルソナ (例: Proactive Tech Lead)
+  - コミュニケーションルール (言語設定など)
+  - エンジニアリング標準 (汎用的な品質基準)
+
+- **`workflows/`**: **自動化ワークフロー**。
+  - `start_task.md`: タスク開始時の手順
+  - `finalize_task.md`: PR作成、クリーンアップ手順
+  - `release.md`: リリース手順
 
 ## 🚀 セットアップ
 
-新しいマシンでこれらの設定を使用するには：
+任意のプロジェクトで、この設定リポジトリを `.agent/` ディレクトリとして利用します。
 
 ```bash
-# 1. メインプロジェクトをクローン
-git clone https://github.com/mtskf/EPUB-to-Markdown-Converter.git
-cd EPUB-to-Markdown-Converter
-
-# 2. この設定リポジトリを .agent/ にクローン (メインリポジトリからは無視されます)
-git clone git@github.com:mtskf/epub2md-agent-configs.git .agent
+# プロジェクトのルートディレクトリで実行
+git clone <URL_TO_THIS_REPO> .agent
 ```
 
-## 🛡 プライバシー
-このリポジトリは **Private** です。AIの「秘伝のタレ」（カスタムプロンプトやコンテキスト）を公開 `epub2md` リポジトリに晒すことなく、複数のマシン間で共有することを可能にします。
+## 🛡 プライバシー & コンセプト
+このディレクトリ (`.agent/`) は、通常 `.gitignore` に含まれ、メインのプロジェクトリポジトリにはコミットされません（またはプライベートなサブモジュールとして管理されます）。
+これにより、AIの「秘伝のタレ」（カスタムプロンプト、運用ノウハウ、個別ルール）を公開リポジトリと分離して管理・共有できます。

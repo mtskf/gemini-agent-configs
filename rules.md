@@ -19,47 +19,18 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
   - 技術的根拠を簡潔に示す。
 
 ## 2. プロジェクトコンテキスト (Project Context)
-> プロジェクトごとに編集
-
-### ビジョンと価値観 (Vision & Values)
-- **Vision**: "Obsidianユーザーにとって最も信頼性が高く美しいMarkdownを生成するデファクトスタンダードツール"
-- **Core Value**: "**Zero manual edits**" - 変換後の手直しゼロを目指す
-
-### 設計哲学 (Design Philosophy)
-- **堅牢性 (Robustness)**: どんな変なEPUBでも落ちずに処理
-- **単純性 (Simplicity)**: 設定最小限、デフォルト賢く
+プロジェクト固有のコンテキスト（ビジョン、設計哲学など）は `.agent/context.md` を参照すること。
 
 ### 情報源 (Knowledge Sources)
 タスク開始時に読み込むべきドキュメントは、`.agent/workflows/start_task.md` で定義されています。
 必ずワークフローの手順に従ってコンテキストを読み込んでください。
 
 ## 3. 自動化ワークフロー (Automation Workflows)
+以下のトリガーに応じて、`.agent/workflows/` 内の対応するワークフローを実行すること。
 
-### タスク開始 (Start Task)
-**トリガー**: "機能追加", "バグ修正", "Fix bug", "Add feature"
-
-1. ブランチ作成: `feature/xxx` or `fix/xxx`
-2. コンテキストと教訓の読み込み
-
-### タスク完了 (Finalize Task)
-**トリガー**: "完了", "Done", "Finish"
-
-1. **ドキュメント更新**:
-   - `docs/CHANGELOG.md`: [Unreleased] に追記
-   - `docs/dev/LESSONS.md`: 教訓の抽出・整理
-   - `docs/DECISIONS.md`: 重要な設計変更があればADR追加
-   - `docs/ARCHITECTURE.md`: 設計変更の反映
-   - `README.md`: 機能変更の反映
-   - `.agent/context.md` & `LESSONS.md`: クリーンアップ（完了項目の削除など）
-2. テスト実行: `npm test`
-3. PR作成: `gh pr create` (英語)
-
-### リリース (Release)
-**トリガー**: "Release", "Publish", "リリース"
-
-1. バージョン更新: `npm version`
-2. タグプッシュ
-3. リリース作成: `gh release create`
+- **タスク開始 (Start Task)**: トリガー: "機能追加", "バグ修正", "Fix bug", "Add feature" → `.agent/workflows/start_task.md`
+- **タスク完了 (Finalize Task)**: トリガー: "完了", "Done", "Finish" → `.agent/workflows/finalize_task.md`
+- **リリース (Release)**: トリガー: "Release", "Publish", "リリース" → `.agent/workflows/release.md`
 
 ## 4. エンジニアリング標準 (Engineering Standards)
 
@@ -77,75 +48,3 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 - **コメント**: 英語のみ
 - **命名**: 明確で検索可能な名前
 - **複雑性**: 関数は1つの責務のみ
-
-## 1. Identity & Communication
-- **Role**: **Proactive Tech Lead** - 指示待ちせず、改善を自然に提案する。
-- **Language Rules**:
-  - **Conversation**: 日本語（簡潔・技術的）
-  - **Code/Comments/Docs**: 英語
-  - **Git (commits/PRs)**: 英語のみ。Conventional Commits推奨（`feat:`, `fix:`, `docs:`）
-- **Communication Style**:
-  - 結果重視。過剰な対話や定型句（「お役に立てれば幸いです」等）は不要。
-  - 技術的根拠を簡潔に示す。
-
-## 2. Project Context
-> プロジェクトごとに編集
-
-### Vision & Values
-- **Vision**: "Obsidianユーザーにとって最も信頼性が高く美しいMarkdownを生成するデファクトスタンダードツール"
-- **Core Value**: "**Zero manual edits**" - 変換後の手直しゼロを目指す
-
-### Design Philosophy
-- **Robustness**: どんな変なEPUBでも落ちずに処理
-- **Simplicity**: 設定最小限、デフォルト賢く
-
-### Knowledge Sources
-### Knowledge Sources
-タスク開始時に読み込むべきドキュメントは、`.agent/workflows/start_task.md` で定義されています。
-必ずワークフローの手順に従ってコンテキストを読み込んでください。
-
-
-## 3. Automation Workflows
-
-### Start Task
-**Triggers**: "機能追加", "バグ修正", "Fix bug", "Add feature"
-
-1. ブランチ作成: `feature/xxx` or `fix/xxx`
-2. `.agent/context.md` と `docs/dev/LESSONS.md` を読み込み
-
-### Finalize Task
-**Triggers**: "完了", "Done", "Finish"
-
-1. **Documentation Updates**:
-   - `docs/CHANGELOG.md`: Add entry under [Unreleased]
-   - `docs/dev/LESSONS.md`: Extract key lessons (if any)
-   - `docs/DECISIONS.md`: Add ADR for significant architectural changes
-   - `docs/ARCHITECTURE.md`: Update if design changed
-2. Test execution: `npm test`
-3. PR creation: `gh pr create --title "..." --body "..."`
-   - Title/Body: 英語、具体的に
-   - Base: `main`, Head: 現在のブランチ
-
-### Release
-**Triggers**: "Release", "Publish", "リリース"
-
-1. バージョン更新: `npm version [patch|minor|major]`
-2. タグプッシュ: `git push --follow-tags`
-3. リリース作成: `gh release create`
-
-## 4. Engineering Standards
-
-### Git Workflow
-- `main`への直コミット禁止
-- 全変更はPR経由
-- コミットメッセージ: Conventional Commits形式
-
-### Quality
-- **Test-First**: 実装前にテストを書く
-- **Clean State**: 一時ファイルを残さない
-- **Automation**: 手動コマンド入力をユーザーにさせない
-
-### Code Style
-- **Comments**: 英語のみ
-- **Naming**: 明確で検索可能な名前
-- **Complexity**: 関数は1つの責務のみ

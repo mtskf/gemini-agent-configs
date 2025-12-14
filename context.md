@@ -34,6 +34,6 @@ AIエージェント向けクイックリファレンス。
 
 ## 開発ワークフロー
 1. 開始前に `docs/dev/LESSONS.md` を読む
-2. ユーザー向け変更は `CHANGELOG.md` を更新
+2. ユーザー向け変更は `docs/CHANGELOG.md` を更新
 3. アーキテクチャ変更は `docs/DECISIONS.md` にADRを追加
 4. 完了後、教訓を `docs/dev/LESSONS.md` に抽出
