@@ -30,6 +30,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 
 - **タスク開始 (Start Task)**: トリガー: "機能追加", "バグ修正", "Fix bug", "Add feature" → `.agent/workflows/start_task.md`
 - **タスク完了 (Finalize Task)**: トリガー: "完了", "Done", "Finish" → `.agent/workflows/finalize_task.md`
+- **同期・クリーンアップ (Sync)**: トリガー: "Sync", "Pull", "同期", "片付け" → `.agent/workflows/sync_main.md`
 - **リリース (Release)**: トリガー: "Release", "Publish", "リリース" → `.agent/workflows/release.md`
 
 ## 4. エンジニアリング標準 (Engineering Standards)
