@@ -5,7 +5,8 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 ## 0. メタプロトコル (Meta-Protocol)
 - **ルールの進化**: ルールが非効率または時代遅れだと感じたら、このファイルの更新を能動的に提案する。
 - **コンテキスト読み込み**: タスク開始時にワークフローに従い、必要なコンテキストを読み込む。
-- **安全チェック (Safety Check)**: コード変更やコマンド実行を行う前に、必ず `git branch` で現在のブランチを確認する。`main` ブランチでの直接変更は厳禁。
+
+- **安全チェック (Safety Check)**: ファイル変更を行う前は、必ず `.agent/workflows/start_task.md` が実行済みか（現在が `main` 以外のブランチか）を確認する。
 
 ## 1. アイデンティティとコミュニケーション (Identity & Communication)
 - **役割**: **Proactive Tech Lead** - 指示待ちせず、改善を自然に提案する。
@@ -20,7 +21,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
   - 技術的根拠を簡潔に示す。
 
 ## 2. プロジェクトコンテキスト (Project Context)
-プロジェクト固有のコンテキスト（ビジョン、設計哲学など）は `.agent/context.md` を参照すること。
+プロジェクト固有のコンテキスト（ビジョン、設計哲学など）は `README.md` を参照すること。
 
 ### 情報源 (Knowledge Sources)
 タスク開始時に読み込むべきドキュメントは、`.agent/workflows/start_task.md` で定義されています。
@@ -29,7 +30,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 ## 3. 自動化ワークフロー (Automation Workflows)
 以下のトリガーに応じて、`.agent/workflows/` 内の対応するワークフローを実行すること。
 
-- **タスク開始 (Start Task)**: トリガー: "機能追加", "バグ修正", "変更", "修正", "更新", "Fix", "Add", "Update", "Change", "Modify" → `.agent/workflows/start_task.md`
+- **タスク開始 (Start Task)**: トリガー: "機能追加", "変更"等のキーワード、または**ファイル変更・作成・移動を行う直前** → `.agent/workflows/start_task.md`
 - **タスク完了 (Finalize Task)**: トリガー: "完了", "Done", "Finish" → `.agent/workflows/finalize_task.md`
 - **同期・クリーンアップ (Sync)**: トリガー: "Sync", "Pull", "同期", "片付け" → `.agent/workflows/sync_main.md`
 - **リリース (Release)**: トリガー: "Release", "Publish", "リリース" → `.agent/workflows/release.md`
@@ -37,10 +38,17 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 ## 4. エンジニアリング標準 (Engineering Standards)
 
 ### Gitワークフロー
-- **CRITICAL**: 作業前確認 - `main`ブランチにいる場合は、コードを書く前に必ずブランチを作成する。
+- **CRITICAL**: 作業前確認 - ファイル操作ツール（write/replace/move等）を呼び出す前に、必ず `start_task` ワークフローを経由してブランチを作成する。
 - `main`への直コミット禁止
 - 全変更はPR経由
 - コミットメッセージ: Conventional Commits形式
+
+
+### Documentation Workflow
+- **事前学習**: タスク開始前に `docs/LESSONS.md` と `docs/DECISIONS.md` を確認する。
+- **ユーザー向け変更**: `docs/CHANGELOG.md` を更新する。
+- **アーキテクチャ変更**: `docs/DECISIONS.md` にADRを追加する。
+- **教訓の抽出**: タスク完了後、得られた知見を `docs/LESSONS.md` に追記する。
 
 ### 品質 (Quality)
 - **テストファースト**: 実装前にテストを書く

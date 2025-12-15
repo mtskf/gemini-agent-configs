@@ -20,6 +20,6 @@ description: タスク開始処理 (ブランチ作成、コンテキスト読�
    git checkout -b <branch_name>
 
 4. **コンテキスト読み込み**
-   - [ ] `.agent/context.md` を読み込み、プロジェクト概要を把握。
-   - [ ] `docs/dev/LESSONS.md` を読み込み、過去の教訓を確認。
+   - [ ] `README.md` を読み込み、プロジェクト概要を把握。
+   - [ ] `docs/LESSONS.md` を読み込み、過去の教訓を確認。
    - [ ] `docs/DECISIONS.md` (最新3-5件) で最近の設計決定を確認。
