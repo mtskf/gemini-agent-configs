@@ -13,7 +13,7 @@ description: リリース処理 (バージョン上げ、タグ打ち、GitHub R
 2.  **`package.json` の更新とタグ付け**
     - [ ] `npm version` コマンドを実行する。
     // turbo
-    npm version <type> -m "Release: v%s"
+    pnpm version <type> -m "Release: v%s"
 
 3.  **リモートへのプッシュ**
     - [ ] コミットとタグを同時にプッシュする。
