@@ -38,6 +38,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
   - 新機能にはテストを追加する。
 - **Git**:
   - `main` への直コミット禁止。
+  - **PR Status Verification**: 既存のfeatureブランチにプッシュする前に、必ず `gh pr view` または `gh pr list` で対応するPRがOpenであることを確認する。Mergedの場合は新しいブランチを作成する。
   - コミットメッセージは Conventional Commits 形式。
 
 ## 3. 自動化ワークフロー (Automation Workflows)
