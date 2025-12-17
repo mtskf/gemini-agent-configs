@@ -17,6 +17,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 - **Task Management**:
   - `task_boundary` は、`task.md` のトップレベル項目と同期させる。
   - 計画段階では必ず `implementation_plan.md` を作成し、ユーザー承認を得てから「EXECUTION」モードへ移行する。
+  - **Session Reset**: コンテキストが長くなりすぎたり、混乱が生じた場合は、進捗を `task.md` にまとめてセッションをリセット（`finalize_task` せずにチャットを新しく）することを提案する。
 - **Communication Style**:
   - 結果重視。定型句は排除。
   - 不確実な場合は、推測で進めずに `notify_user` で確認する。

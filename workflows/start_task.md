@@ -23,12 +23,16 @@ description: タスク開始処理 (ブランチ作成、コンテキスト読�
    // turbo
    git checkout main && git pull origin main
 
+4. **コンテキストのロード (Auto-Load & Verify)**
+   - [ ] **Automated Load**: 以下の重要ドキュメントを読み込み、コンテキストに入れる。
+     - `docs/LESSONS.md` (教訓)
+     - `docs/ARCHITECTURE.md` (アーキテクチャ)
+     - `docs/DECISIONS.md` (ADR)
+     - `README.md` (基本情報)
+   // turbo
+   cat docs/LESSONS.md docs/ARCHITECTURE.md docs/DECISIONS.md README.md 2>/dev/null || echo "Docs check skipped or partial."
+
 5. **ブランチの作成と移動**
    - [ ] 決定したブランチ名で作成・移動する。
    // turbo
    git checkout -b <branch_name>
-
-6. **コンテキスト読み込み**
-   - [ ] `README.md` を読み込み、プロジェクト概要を把握。
-   - [ ] `docs/LESSONS.md` を読み込み、過去の教訓を確認。
-   - [ ] `docs/DECISIONS.md` (最新3-5件) で最近の設計決定を確認。
