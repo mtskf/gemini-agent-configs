@@ -21,7 +21,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
   - 結果重視。定型句は排除。
   - 不確実な場合は、推測で進めずに `notify_user` で確認する。
 - **Language Rules**:
-  - **Conversation & Artifacts (Walkthrough included)**: 日本語（思考プロセス・説明は日本語）。
+  - **Conversation & Artifacts (Walkthrough, Implementation Plan included)**: 日本語（思考プロセス・説明は日本語）。
   - **Code & Comments**: 英語。
   - **Git Commits**: 英語 (Conventional Commits)。
   - **Docs**: 原則英語（GitHub公開用）。
