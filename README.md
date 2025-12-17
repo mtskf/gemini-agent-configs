@@ -1,7 +1,12 @@
 # AIエージェント設定 (AI Agent Configuration)
 
-AIエージェント (Antigravity/Gemini) のためのプライベート設定リポジトリです。
-プロジェクトのルートディレクトリに `.agent/` として配置し、AIのペルソナ、運用ルール、ワークフローを定義します。
+Google Antigravity / Gemini を、単なるコーダーではなく **"Proactive Tech Lead" (能動的なテックリード)** として振る舞わせるための設定リポジトリです。
+
+`.agent/` ディレクトリとしてプロジェクトのルートに配置することで、AIに「外部脳」としての **行動規範 (Rules)** と **自律的な開発サイクル (Workflows)** を提供します。
+これにより、コンテキストの忘却を防ぎ、`main` ブランチ事故を根絶し、ドキュメントとコードの乖離を防ぎます。
+
+参考： [Antigravity x Geminiを "Proactive Tech Lead" に育てる試みとその記録 #AI - Qiita](https://qiita.com/gurigurico/items/fa2bb68dde57042490d2)
+
 
 ## 📂 構造
 
@@ -63,3 +68,6 @@ echo ".agent" >> .gitignore
 
 **⚠️ 注意**:
 シンボリックリンクはローカル環境での利用に最適です。チーム開発やリポジトリを配布する場合、他のメンバーの環境でリンク切れが発生する可能性があるため、`git submodule` の利用を推奨します。
+
+## 📚 References
+- [Antigravity x Geminiを "Proactive Tech Lead" に育てる試みとその記録 #AI - Qiita](https://qiita.com/gurigurico/items/fa2bb68dde57042490d2)
