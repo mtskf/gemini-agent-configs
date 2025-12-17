@@ -14,7 +14,11 @@ Google Antigravity / Gemini を、単なるコーダーではなく **"Proactive
   - **Meta-Protocol**: Pre-Flight Check (ブランチ確認), 自己修正 (Self-Correction)。
   - **Agentic Mode**: タスク管理, Artifacts 活用。
   - **Engineering Standards**: 安全第一 (Main Branch 保護), Lint & Test。
+  - **Engineering Standards**: 安全第一 (Main Branch 保護), Lint & Test。
   - **Documentation Hygiene**: 最適化 & アーカイブ。
+
+- **`reflection_checklist.md`**: **自己レビュー用チェックリスト**。
+  - `finalize_task` ワークフローでコミット前に自動表示され、品質と整合性を確認するために使用します。
 
 - **`workflows/`**: **自動化ワークフロー**。
   - `start_task.md`: タスク開始 (ブランチ作成, コンテキスト, スクリプト確認)
