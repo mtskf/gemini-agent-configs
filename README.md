@@ -6,17 +6,27 @@ AIエージェント (Antigravity/Gemini) のためのプライベート設定�
 ## 📂 構造
 
 - **`rules.md`**: **エージェントの行動規範 (Generic Rules)**。
-  - 共通のAIペルソナ (例: Proactive Tech Lead)
-  - コミュニケーションルール (言語設定など)
-  - エンジニアリング標準 (汎用的な品質基準)
+  - **Meta-Protocol**: Pre-Flight Check (Git Branch Check), Self-Correction.
+  - **Agentic Mode**: Task Management, Artifacts Usage.
+  - **Engineering Standards**: Safety First (Main Branch Protection), Lint & Test.
+  - **Documentation Hygiene**: Optimization & Archiving.
 
 - **`workflows/`**: **自動化ワークフロー**。
-  - `start_task.md`: タスク開始時の手順
-  - `finalize_task.md`: PR作成、クリーンアップ手順
+  - `start_task.md`: タスク開始 (Branch, Context, Scripts Check)
+  - `finalize_task.md`: タスク完了 (PR, Doc Hygiene, Cleanup)
+  - `sync_main.md`: 同期 (Main Pull, Prune, Submodule)
+  - `lint_and_test.md`: 品質チェック (Lint, Test)
   - `release.md`: リリース手順
-  - `sync_main.md`: メインブランチとの同期手順
 
-## 🚀 セットアップ
+## � 管理対象ドキュメント (Managed Documentation)
+利用側のプロジェクト (`docs/`) で自動的に管理・更新されるドキュメント群です。`finalize_task` ワークフローで最適化されます。
+
+- **`docs/ARCHITECTURE.md`**: 現在のシステム全体の設計図 (Living Document)。差分ではなく**今の状態**を記述します。
+- **`docs/CHANGELOG.md`**: ユーザー向けの変更履歴。[Unreleased] に追記され、肥大化すると `docs/Archives/` に移動されます。
+- **`docs/DECISIONS.md`**: アーキテクチャ決定記録 (ADR)。重要な技術的決定を記録します。
+- **`docs/LESSONS.md`**: プロジェクトを通じて得られた教訓やベストプラクティス。
+
+## �🚀 セットアップ
 
 任意のプロジェクトで、この設定リポジトリを `.agent/` ディレクトリとして利用します。
 
