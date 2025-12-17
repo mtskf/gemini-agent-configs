@@ -19,7 +19,10 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
     pnpm test
 
 3. **コミット & プッシュ**
-   - [ ] **Self-Review**: コミット前に `git diff --cached` (または変更ファイル) を確認し、不要なコードやコメントアウト残骸を排除する。
+   - [ ] **Self-Check**: 以下のチェックリストを読み込み、自己レビューを行う。
+   // turbo
+   cat .agent/reflection_checklist.md
+   - [ ] **Self-Review**: 上記リストに基づき、`git diff --cached` で確認し、修正が必要なら行う。
    - [ ] 現在のブランチ名を確認。
    - [ ] 変更をコミットし、リモートにプッシュする。
    // turbo

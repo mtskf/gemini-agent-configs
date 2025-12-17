@@ -26,11 +26,12 @@ description: タスク開始処理 (ブランチ作成、コンテキスト読�
 4. **コンテキストのロード (Auto-Load & Verify)**
    - [ ] **Automated Load**: 以下の重要ドキュメントを読み込み、コンテキストに入れる。
      - `docs/LESSONS.md` (教訓)
+     - `docs/TECH_STACK.md` (技術スタック)
      - `docs/ARCHITECTURE.md` (アーキテクチャ)
      - `docs/DECISIONS.md` (ADR)
      - `README.md` (基本情報)
    // turbo
-   cat docs/LESSONS.md docs/ARCHITECTURE.md docs/DECISIONS.md README.md 2>/dev/null || echo "Docs check skipped or partial."
+   cat docs/LESSONS.md docs/TECH_STACK.md docs/ARCHITECTURE.md docs/DECISIONS.md README.md 2>/dev/null || echo "Docs check skipped or partial."
 
 5. **ブランチの作成と移動**
    - [ ] 決定したブランチ名で作成・移動する。
