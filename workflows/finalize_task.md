@@ -19,13 +19,17 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
     pnpm test
 
 3. **コミット & プッシュ (with Verification)**
-   - [ ] **Self-Check**: 以下のチェックリストを読み込み、自己レビューを行う。
-   // turbo
-   cat .agent/reflection_checklist.md 2>/dev/null || echo "Checklist skipped."
+   - [ ] **Self-Check**: 以下の項目を自問自答する。
+     - [ ] **Complexity**: Is the solution as simple as possible? (YAGNI/KISS)
+     - [ ] **Naming**: Do variable/function names match `docs/TECH_STACK.md` conventions?
+     - [ ] **Hygiene**: Did I remove all `console.log` / debug comments?
+     - [ ] **Context**: Does this change align with `docs/ARCHITECTURE.md`?
+     - [ ] **Tests**: Did I run existing tests (`pnpm test`) and pass?
+     - [ ] **Docs**: Did I update `docs/CHANGELOG.md` and other relevant docs?
    - [ ] **PR Status Check**: `gh pr view` で現在のブランチに関連するPRが既にマージされていないか確認する。Mergedなら新ブランチを作成。
    - [ ] **Self-Review**: `git diff --cached` で最終確認。
    - [ ] 変更をコミットし、リモートにプッシュする。
-   - [ ] 変更をコミットし、リモートにプッシュする。
+
    // turbo
    git add . && git commit -m "<type>: <subject>" && git push origin HEAD
 
