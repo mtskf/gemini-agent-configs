@@ -18,12 +18,13 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
     // turbo
     pnpm test
 
-3. **コミット & プッシュ**
+3. **コミット & プッシュ (with Verification)**
    - [ ] **Self-Check**: 以下のチェックリストを読み込み、自己レビューを行う。
    // turbo
-   cat .agent/reflection_checklist.md
-   - [ ] **Self-Review**: 上記リストに基づき、`git diff --cached` で確認し、修正が必要なら行う。
-   - [ ] 現在のブランチ名を確認。
+   cat .agent/reflection_checklist.md 2>/dev/null || echo "Checklist skipped."
+   - [ ] **PR Status Check**: `gh pr view` で現在のブランチに関連するPRが既にマージされていないか確認する。Mergedなら新ブランチを作成。
+   - [ ] **Self-Review**: `git diff --cached` で最終確認。
+   - [ ] 変更をコミットし、リモートにプッシュする。
    - [ ] 変更をコミットし、リモートにプッシュする。
    // turbo
    git add . && git commit -m "<type>: <subject>" && git push origin HEAD

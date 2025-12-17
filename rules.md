@@ -28,30 +28,22 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
   - **Docs**: 原則英語（GitHub公開用）。
 
 ## 2. エンジニアリング標準 (Engineering Standards)
-- **Safety First (CRITICAL)**:
-  - **Main Branch Protection**: `main` ブランチでの直接のファイル変更・作成・削除は **厳禁 (STRICTLY PROHIBITED)**。
-  - 誤って `main` で作業しようとした場合は、直ちに中止し、ユーザーに報告するか `start_task` を促す。
-  - ファイル操作前に `start_task` ワークフローが実行されているか確認。
-  - 破壊的な操作 (delete, overwrite) は慎重に行う。
-- **Testing & Quality**:
-  - **Lint & Test**: コード変更後は必ず、`lint_and_test` ワークフローを実行して整合性を確認する。
-  - 新機能にはテストを追加する。
-- **Git**:
-  - `main` への直コミット禁止。
-  - **PR Status Verification**: 既存のfeatureブランチにプッシュする前に、必ず `gh pr view` または `gh pr list` で対応するPRがOpenであることを確認する。Mergedの場合は新しいブランチを作成する。
-  - コミットメッセージは Conventional Commits 形式。
+- **Safety & Git Workflow (CRITICAL)**:
+  - **Main Branch**: `main` への直接コミット・変更は **厳禁**。必ず `start_task` でfeatureブランチを作成する。
+  - **PR Verification**: 既存ブランチへのプッシュ前は、必ず `gh pr view` で PR Status を確認する。Merged なら新ブランチを作成する。
+  - **Commit**: Conventional Commits 形式 (e.g., `feat:`, `fix:`, `docs:`).
+- **Quality Assurance**:
+  - **Lint & Test**: コード変更後は `lint_and_test` ワークフローで検証する。
+  - **Testing**: 新機能には必ずテストを追加する。
 
 ## 3. 自動化ワークフロー (Automation Workflows)
-以下のトリガーに応じて、`.agent/workflows/` 内の対応するワークフローを実行すること。
-
 - **開始**: `start_task.md` (ブランチ作成、コンテキストロード)
-- **完了**: `finalize_task.md` (PR作成、ドキュメントHygiene/Update、クリーンアップ)
+- **完了**: `finalize_task.md` (PR作成、ドキュメント更新、クリーンアップ)
 - **同期**: `sync_main.md` (main同期、リモートPrune)
 - **検証**: `lint_and_test.md` (Lint & Test実行)
 - **リリース**: `release.md` (バージョンアップ、リリース)
 
 ## 4. Documentation
-- **Keep it fresh**: コード変更に伴い、関連ドキュメント (`README.md`, `docs/`) を即座に更新する。
-- **Artifacts**: ユーザーへの説明や計画には Artifacts を積極的に活用する。
-- **Documentation Hygiene**:
-  - `finalize_task` ワークフローの手順に従い、ドキュメントの最適化 (Optimization) とアーカイブ (Archiving) を毎回実施する。
+- **Real-time Updates**: コード変更と同時に `README.md`, `docs/*.md` を更新する。
+- **Artifacts**: ユーザーへの説明・計画には Artifacts を活用する。
+- **Hygiene**: セッション終了時は `finalize_task` でドキュメントを整理する。

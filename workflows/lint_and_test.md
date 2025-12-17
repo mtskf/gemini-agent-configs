@@ -7,9 +7,10 @@ description: Lint and Test (Quality Check)
 1. **Lint実行**
    - [ ] `package.json` に `lint` スクリプトがあるか確認し、あれば実行する。
    // turbo
-   if grep -q '"lint":' package.json; then npm run lint; else echo "No lint script found."; fi
+   // turbo
+   if grep -q '"lint":' package.json; then pnpm run lint; else echo "No lint script found."; fi
 
 2. **Test実行**
    - [ ] `package.json` に `test` スクリプトがあるか確認し、あれば実行する。
    // turbo
-   if grep -q '"test":' package.json; then npm run test; else echo "No test script found."; fi
+   if grep -q '"test":' package.json; then pnpm run test; else echo "No test script found."; fi
