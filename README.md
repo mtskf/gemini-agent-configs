@@ -6,14 +6,14 @@ AIエージェント (Antigravity/Gemini) のためのプライベート設定�
 ## 📂 構造
 
 - **`rules.md`**: **エージェントの行動規範 (Generic Rules)**。
-  - **Meta-Protocol**: Pre-Flight Check (Git Branch Check), Self-Correction.
-  - **Agentic Mode**: Task Management, Artifacts Usage.
-  - **Engineering Standards**: Safety First (Main Branch Protection), Lint & Test.
-  - **Documentation Hygiene**: Optimization & Archiving.
+  - **Meta-Protocol**: Pre-Flight Check (ブランチ確認), 自己修正 (Self-Correction)。
+  - **Agentic Mode**: タスク管理, Artifacts 活用。
+  - **Engineering Standards**: 安全第一 (Main Branch 保護), Lint & Test。
+  - **Documentation Hygiene**: 最適化 & アーカイブ。
 
 - **`workflows/`**: **自動化ワークフロー**。
-  - `start_task.md`: タスク開始 (Branch, Context, Scripts Check)
-  - `finalize_task.md`: タスク完了 (PR, Doc Hygiene, Cleanup)
+  - `start_task.md`: タスク開始 (ブランチ作成, コンテキスト, スクリプト確認)
+  - `finalize_task.md`: タスク完了 (PR作成, ドキュメント整理, クリーンアップ)
   - `sync_main.md`: 同期 (Main Pull, Prune, Submodule)
   - `lint_and_test.md`: 品質チェック (Lint, Test)
   - `release.md`: リリース手順
