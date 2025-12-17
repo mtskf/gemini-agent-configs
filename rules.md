@@ -28,7 +28,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
   - ファイル操作前に `start_task` ワークフローが実行されているか確認。
   - 破壊的な操作 (delete, overwrite) は慎重に行う。
 - **Testing & Quality**:
-  - **Lint & Test**: コード変更後は必ず、`lint` および `test` スクリプト (`package.json` にある場合) を実行して整合性を確認する。
+  - **Lint & Test**: コード変更後は必ず、`lint_and_test` ワークフローを実行して整合性を確認する。
   - 新機能にはテストを追加する。
 - **Git**:
   - `main` への直コミット禁止。
@@ -38,7 +38,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 以下のトリガーに応じて、`.agent/workflows/` 内の対応するワークフローを実行すること。
 
 - **開始**: `start_task.md` (ブランチ作成、コンテキストロード)
-- **完了**: `finalize_task.md` (PR作成、クリーンアップ)
+- **完了**: `finalize_task.md` (PR作成、ドキュメントHygiene/Update、クリーンアップ)
 - **同期**: `sync_main.md` (main同期、リモートPrune)
 - **検証**: `lint_and_test.md` (Lint & Test実行)
 - **リリース**: `release.md` (バージョンアップ、リリース)
@@ -46,3 +46,5 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 ## 4. Documentation
 - **Keep it fresh**: コード変更に伴い、関連ドキュメント (`README.md`, `docs/`) を即座に更新する。
 - **Artifacts**: ユーザーへの説明や計画には Artifacts を積極的に活用する。
+- **Documentation Hygiene**:
+  - `finalize_task` ワークフローの手順に従い、ドキュメントの最適化 (Optimization) とアーカイブ (Archiving) を毎回実施する。

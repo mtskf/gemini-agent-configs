@@ -4,14 +4,14 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
 
 このワークフローは、変更のコミットからプルリクエストの作成までを自動化します。
 
-1. **ドキュメント更新**
+1. **ドキュメント更新 (Hygiene Check)**
    - [ ] `docs/CHANGELOG.md` の [Unreleased] セクションに変更内容を追記。
+   - [ ] **Archiving**: `docs/CHANGELOG.md` が肥大化している場合は、古い内容を `docs/Archives/` へ移動する。
    - [ ] 重要な教訓があれば `docs/LESSONS.md` に抽出。
    - [ ] アーキテクチャ変更があれば `docs/DECISIONS.md` に ADR を追加。
    - [ ] 設計が変わった場合、`docs/ARCHITECTURE.md` を更新。
    - [ ] 機能追加・変更があった場合、`README.md` を更新。
-   - [ ] `docs/LESSONS.md` を整理し、陳腐化した項目をアーカイブまたは削除。
-   - [ ] `docs/DECISIONS.md` を整理し、陳腐化した項目をアーカイブまたは削除。
+   - [ ] **Optimization**: `docs/LESSONS.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md` を見直し、重複・陳腐化した項目を整理（削除/統合/移動）する。
 
 2. **動作確認**
     - [ ] テスト実行。
