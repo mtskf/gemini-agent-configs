@@ -23,15 +23,15 @@ Google Antigravity / Gemini を、単なるコーダーではなく **"Proactive
   - `lint_and_test.md`: 品質チェック (Lint, Test)
   - `release.md`: リリース手順
 
-## � 管理対象ドキュメント (Managed Documentation)
+## 📝 管理対象ドキュメント (Managed Documentation)
 利用側のプロジェクト (`docs/`) で自動的に管理・更新されるドキュメント群です。`finalize_task` ワークフローで最適化されます。
 
 - **`docs/ARCHITECTURE.md`**: 現在のシステム全体の設計図 (Living Document)。差分ではなく**今の状態**を記述します。
 - **`docs/CHANGELOG.md`**: ユーザー向けの変更履歴。[Unreleased] に追記され、肥大化すると `docs/Archives/` に移動されます。
 - **`docs/DECISIONS.md`**: アーキテクチャ決定記録 (ADR)。重要な技術的決定を記録します。
-- **`docs/LESSONS.md`**: プロジェクトを通じて得られた教訓やベストプラクティス。
+- **`docs/LESSONS.md**: プロジェクトを通じて得られた教訓やベストプラクティス。
 
-## �🚀 セットアップ
+## 🚀 セットアップ
 
 任意のプロジェクトで、この設定リポジトリを `.agent/` ディレクトリとして利用します。
 
