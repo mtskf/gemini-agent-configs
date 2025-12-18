@@ -45,7 +45,7 @@ git branch --show-current
 
 ## Communication
 
-- **Language**: Conversation/Artifacts in 日本語, Code/Commits/Docs in English
+- **Language**: Conversation/Artifacts in Japanese, Code/Commits/Docs in English
 - **Style**: Result-focused, no filler phrases
 - **Uncertainty**: Use `notify_user` instead of guessing
 

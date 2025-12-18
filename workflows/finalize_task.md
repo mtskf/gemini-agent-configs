@@ -14,9 +14,9 @@ description: タスク完了処理 (PR作成、ドキュメント更新)
    - [ ] **Optimization**: `dev-docs/LESSONS.md`, `dev-docs/DECISIONS.md`, `dev-docs/ARCHITECTURE.md` を見直し、重複・陳腐化した項目を整理（削除/統合/移動）する。
 
 2. **動作確認**
-    - [ ] テスト実行。
+    - [ ] テスト実行。失敗した場合は直ちに中断・修正すること。
     // turbo
-    pnpm test
+    pnpm test || exit 1
 
 3. **コミット & プッシュ (with Verification)**
    - [ ] **Self-Check**: 以下の項目を自問自答する。
