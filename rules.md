@@ -10,7 +10,7 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 - **情報源の優先順位**:
   1. **Artifacts (`task.md`, `implementation_plan.md`)**: タスク実行中の真実のソース。
   2. **Codebase**: 実際のコード。
-  3. **Docs**: `docs/` 以下のドキュメント。
+  3. **Docs**: `dev-docs/` 以下のドキュメント。
 - **自己修正 (Self-Correction)**: エラー発生時は、すぐにユーザーに助けを求めず、エラー内容を分析し、修正案を試行する (Try -> Fix -> Retry loop)。
 
 ## 1. Agentic Mode & Communication
@@ -44,6 +44,6 @@ AIエージェントの振る舞い、価値観、運用ルールを定義しま
 - **リリース**: `release.md` (バージョンアップ、リリース)
 
 ## 4. Documentation
-- **Real-time Updates**: コード変更と同時に `README.md`, `docs/*.md` を更新する。
+- **Real-time Updates**: コード変更と同時に `README.md`, `dev-docs/*.md` を更新する。
 - **Artifacts**: ユーザーへの説明・計画には Artifacts を活用する。
 - **Hygiene**: セッション終了時は `finalize_task` でドキュメントを整理する。
