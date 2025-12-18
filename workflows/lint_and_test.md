@@ -7,7 +7,6 @@ description: Lint and Test (Quality Check)
 1. **Lint実行**
    - [ ] `package.json` に `lint` スクリプトがあるか確認し、あれば実行する。
    // turbo
-   // turbo
    if grep -q '"lint":' package.json; then pnpm run lint; else echo "No lint script found."; fi
 
 2. **Test実行**

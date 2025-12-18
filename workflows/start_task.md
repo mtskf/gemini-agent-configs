@@ -20,8 +20,6 @@ description: タスク開始処理 (ブランチ作成、コンテキスト読�
 
 4. **最新の main を取得 & コンテキストロード**
    // turbo
-4. **最新の main を取得 & コンテキストロード**
-   // turbo
    git checkout main && git pull origin main && cat docs/LESSONS.md docs/TECH_STACK.md docs/ARCHITECTURE.md docs/DECISIONS.md README.md 2>/dev/null || echo "Docs check partial."
 
 5. **ブランチの作成と移動**
