@@ -20,7 +20,7 @@ description: タスク開始処理 (ブランチ作成、コンテキスト読�
 
 4. **最新の main を取得 & コンテキストロード**
    // turbo
-   git checkout main && git pull origin main && cat docs/LESSONS.md docs/TECH_STACK.md docs/ARCHITECTURE.md docs/DECISIONS.md README.md 2>/dev/null || echo "Docs check partial."
+   git checkout main && git pull origin main && cat dev-docs/LESSONS.md dev-docs/TECH_STACK.md dev-docs/ARCHITECTURE.md dev-docs/DECISIONS.md README.md 2>/dev/null || echo "Docs check partial."
 
 5. **ブランチの作成と移動**
    - [ ] 決定したブランチ名で作成・移動する。
