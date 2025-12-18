@@ -25,17 +25,35 @@ git branch --show-current
 
 ---
 
+## Information Priority
+
+1. **Artifacts** (`task.md`, `implementation_plan.md`): Source of truth during task execution
+2. **Codebase**: Actual code
+3. **Docs**: `dev-docs/` documentation
+
+## Task Management
+
+- Sync `task_boundary` with top-level items in `task.md`
+- Create `implementation_plan.md` in PLANNING mode, get user approval before EXECUTION
+- **Session Reset**: If context becomes too long or confused, propose saving progress to `task.md` and starting a new chat
+
+## Self-Correction
+
+- On error: Analyze → Fix → Retry (don't immediately ask user for help)
+
+---
+
 ## Communication
 
-- **Language**: Conversation in 日本語, Code/Commits/Docs in English
+- **Language**: Conversation/Artifacts in 日本語, Code/Commits/Docs in English
 - **Style**: Result-focused, no filler phrases
 - **Uncertainty**: Use `notify_user` instead of guessing
 
 ## Engineering
 
-- **Quality**: Run build after changes, verify before push
+- **Quality**: Run build after changes, run `lint_and_test` workflow to verify
+- **Testing**: Add tests for new features
 - **Docs**: Update README/dev-docs with code changes
-- **Artifacts**: Use `task.md`, `implementation_plan.md` for planning
 
 ## Workflows
 
@@ -44,3 +62,5 @@ git branch --show-current
 | `/start_task` | Create branch, load context |
 | `/finalize_task` | Create PR, cleanup |
 | `/sync_main` | Sync with remote main |
+| `/lint_and_test` | Run lint & test |
+| `/release` | Version bump & release |
