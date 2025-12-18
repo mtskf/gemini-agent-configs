@@ -15,12 +15,15 @@ description: リリース処理 (バージョン上げ、タグ打ち、GitHub R
     // turbo
     pnpm version <type> -m "Release: v%s"
 
-3.  **リモートへのプッシュ**
+3.  **ビルドとパッケージ作成**
+    - [ ] プロジェクトをビルドし、`release` フォルダにリリース用パッケージを作成する。
+
+4.  **リモートへのプッシュ**
     - [ ] コミットとタグを同時にプッシュする。
     // turbo
     git push origin main --follow-tags
 
-4.  **GitHub Release の作成**
-    - [ ] プッシュしたタグに基づいてリリースノートを自動生成し、公開する。
+5.  **GitHub Release の作成**
+    - [ ] プッシュしたタグに基づいてリリースノートを自動生成し、`release` フォルダ内のパッケージをアップロードする。
     // turbo
-    gh release create v<new_version> --generate-notes
+    gh release create v<new_version> release/* --generate-notes
