@@ -9,6 +9,7 @@ This workflow automates the process from committing changes to creating a Pull R
    - [ ] **Archiving**: If `dev-docs/CHANGELOG.md` is too large, move old entries to `dev-docs/Archives/`.
    - [ ] **Lessons**: Extract important lessons to `dev-docs/LESSONS.md`.
    - [ ] **Architecture**: Check `dev-docs/ARCHITECTURE.md`. Create if missing. Update to reflect the **current system design**.
+   - [ ] **Specs**: Check `dev-docs/SPEC.md`. Create if missing. Update to reflect **current functional specifications**.
    - [ ] **Decisions**: Add ADR to `dev-docs/DECISIONS.md` if architectural changes were made.
    - [ ] **Readme**: Update `README.md` if new features were added or modified.
    - [ ] **Optimization**: Review `dev-docs/LESSONS.md`, `dev-docs/DECISIONS.md`, and `dev-docs/ARCHITECTURE.md` to remove or merge obsolete items.
