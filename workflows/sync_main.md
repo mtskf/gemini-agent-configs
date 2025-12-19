@@ -1,20 +1,20 @@
 ---
-description: メインブランチの同期とクリーンアップ
+description: Sync Main Branch & Cleanup
 ---
 
-PRマージ後にローカル環境を最新化するためのワークフローです。`main` ブランチに切り替え、Pullを行い、マージ済みの作業ブランチを削除するオプションを提供します。
+Workflow to update local environment after PR merge. Switches to `main`, pulls changes, removes old branches.
 
-1. **メインブランチへの切り替えと更新 (with Prune & Submodule)**
-   - [ ] `main` ブランチにチェックアウトし、リモートの変更を取り込み、古いトラッキングブランチを削除する。
+1. **Switch to Main & Update (with Prune & Submodule)**
+   - [ ] Checkout `main`, fetch prune, pull, and update submodules.
    // turbo
    git checkout main && git fetch --prune origin && git pull origin main && git submodule update --init --recursive
 
-2. **依存関係の更新**
-   - [ ] パッケージの依存関係を更新する。
+2. **Update Dependencies**
+   - [ ] Update package dependencies.
    // turbo
    pnpm install
 
-3. **マージ済みブランチの削除（オプション）**
-   - [ ] マージ済みのローカルブランチを一覧表示し、削除する（ユーザー確認推奨）。
+3. **Delete Merged Branches (Optional)**
+   - [ ] List and delete merged local branches (user confirmation recommended).
    // turbo
    git branch --merged main | grep -v "^\*" | grep -v "main" | xargs -r git branch -d
