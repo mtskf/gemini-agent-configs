@@ -58,7 +58,7 @@ If you work across multiple projects, you can use symbolic links to centralize y
 
 ```bash
 # Clone config repo to a central location
-git clone <URL_TO_THIS_REPO> ~/Dev/AI/gemini-agent-configs
+git clone https://github.com/mtskf/gemini-agent-configs.git ~/Dev/AI/gemini-agent-configs
 
 # Create link at project root
 ln -s ~/Dev/AI/gemini-agent-configs .agent
