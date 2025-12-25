@@ -37,7 +37,7 @@ Use this configuration repository as the `.agent/` directory in any project.
 
 ```bash
 # Execute at project root
-git clone <URL_TO_THIS_REPO> .agent
+git clone https://github.com/mtskf/gemini-agent-configs.git .agent
 
 # Add .agent directory to gitignore (Recommended)
 echo ".agent/" >> .gitignore
