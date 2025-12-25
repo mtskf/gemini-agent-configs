@@ -5,7 +5,7 @@ Configuration repository to transform Google Antigravity / Gemini from a simple 
 By placing this as an `.agent/` directory at the project root, you provide the AI with a "Project Cortex" consisting of **Rules of Conduct (Rules)** and **Autonomous Development Cycles (Workflows)**.
 This prevents context loss, eliminates `main` branch accidents, and keeps documentation and code in sync.
 
-Reference: [Antigravity x Gemini को "Proactive Tech Lead" に育てる試みとその記録 #AI - Qiita](https://qiita.com/gurigurico/items/fa2bb68dde57042490d2) (Japanese)
+Reference: [Antigravity x Gemini を "Proactive Tech Lead" に育てる試みとその記録 #AI - Qiita](https://qiita.com/gurigurico/items/fa2bb68dde57042490d2) (Japanese)
 
 ## 📂 Structure
 
