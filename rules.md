@@ -1,15 +1,18 @@
 # Agent Rules
 
-## ⛔ BEFORE ANY CODE CHANGE - MANDATORY CHECK
+## ⛔ CRITICAL: BEFORE USING `write_to_file` / `replace_file_content`
+
+You MUST run this check before calling any tool that modifies files:
 
 ```bash
 git branch --show-current
 ```
 
-- **If output is `main`** → STOP immediately → Run `/start_task` workflow
-- **If output is feature branch** → Proceed with work
+- **If output is `main`** → **STOP IMMEDIATELY**. Do NOT execute the file modification.
+- **Action**: Run the `/start_task` workflow to create a feature branch first.
 
-> **This check is NON-NEGOTIABLE. No exceptions. Ever.**
+> **This check is NON-NEGOTIABLE. No exceptions.**
+> Modifications on `main` are strictly forbidden.
 
 ---
 
