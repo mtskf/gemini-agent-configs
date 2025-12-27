@@ -24,6 +24,7 @@ git branch --show-current
 | Work on `main` branch | ❌ FORBIDDEN |
 | Create feature branch | ✅ Use `/start_task` |
 | Before push to existing branch | ✅ Run `gh pr view` to check status |
+| Auto-Merge PR | ❌ FORBIDDEN (Require explicit user approval) |
 | Commit format | ✅ Conventional Commits (`feat:`, `fix:`, `docs:`) |
 
 ---
