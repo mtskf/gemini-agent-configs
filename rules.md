@@ -26,6 +26,7 @@ git branch --show-current
 | Before push to existing branch | ✅ Run `gh pr view` to check status |
 | Auto-Merge PR | ❌ FORBIDDEN (Require explicit user approval) |
 | Commit format | ✅ Conventional Commits (`feat:`, `fix:`, `docs:`) |
+| Release | ✅ MUST use `/release` workflow (packages go to `release/`) |
 
 ---
 
