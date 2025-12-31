@@ -16,6 +16,15 @@ git branch --show-current
 
 ---
 
+## ⛔ CRITICAL: IMPLEMENTATION POLICY
+**Strictly forbidden to implement features without explicit user request.**
+
+1. **Explicit Consent Required**: You must NOT implement features, add libraries, or perform major refactoring that has not been explicitly requested by the user.
+2. **Propose First**: If you believe an unrequested feature would be beneficial (e.g., to fix a bug or improve UX), you must **propose it first** and wait for the user's explicit confirmation before writing any code.
+3. **Stick to the Scope**: Focus strictly on solving the stated problem. Avoid "nice-to-have" additions unless authorized.
+
+---
+
 ## Git Workflow (CRITICAL)
 
 | Action | Rule |
