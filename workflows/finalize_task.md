@@ -15,21 +15,35 @@ This workflow automates the process from committing changes to creating a Pull R
    - [ ] **Consistency Check**: Verify that `.env`, `.env.example`, `GUIDE.md`, and `SPEC.md` are synchronized regarding configuration variables.
    - [ ] **Optimization**: Review `dev-docs/LESSONS.md`, `dev-docs/DECISIONS.md`, and `dev-docs/ARCHITECTURE.md` to remove or merge obsolete items.
 
-2. **Quality Check**
+2. **Pre-Commit Review & TDD Loop**
+   - [ ] **Review Changes**: Run `git diff` to inspect all uncommitted changes.
+   - [ ] **Identify Issues**: Look for:
+     - Dead code (unused imports, unreachable functions)
+     - Missing wiring (new functions not called from anywhere)
+     - Incomplete error handling
+     - Missing tests for new code paths
+   - [ ] **TDD Cycle**: For each issue found:
+     1. Write a failing test (if applicable)
+     2. Fix the issue
+     3. Run tests: `pnpm vitest run`
+     4. Repeat until all tests pass
+   - [ ] **Exit Condition**: All issues resolved, all tests green.
+
+3. **Quality Check**
    - [ ] Run linting if available.
    // turbo
    if grep -q '"lint":' package.json; then pnpm run lint; else echo "No lint script found."; fi
    - [ ] Run tests. **Abort immediately** if tests fail.
    // turbo
-   pnpm test || exit 1
+   pnpm vitest run || exit 1
 
-3. **Commit & Push (with Verification)**
+4. **Commit & Push (with Verification)**
    - [ ] **Self-Check**: Ask yourself:
      - [ ] **Complexity**: Is the solution as simple as possible? (YAGNI/KISS)
      - [ ] **Naming**: Do variable/function names match `dev-docs/TECH_STACK.md` conventions?
      - [ ] **Hygiene**: Did I remove all `console.log` / debug comments?
      - [ ] **Context**: Does this change align with `dev-docs/ARCHITECTURE.md`?
-     - [ ] **Tests**: Did I run existing tests (`pnpm test`) and pass?
+     - [ ] **Tests**: Did I run existing tests (`pnpm vitest run`) and pass?
      - [ ] **Docs**: Did I update `dev-docs/CHANGELOG.md` and other relevant docs?
    - [ ] **PR Status Check**: Run `gh pr view` to ensure no merged PR exists for this branch. If merged, create a new branch.
    - [ ] **Self-Review**: Run `git diff --cached` for a final check.
@@ -38,7 +52,7 @@ This workflow automates the process from committing changes to creating a Pull R
    // turbo
    git add . && git commit -m "<type>: <subject>" && git push origin HEAD
 
-4. **Create Pull Request**
+5. **Create Pull Request**
    - [ ] **WAIT**: Ensure the push is completely finished.
    - [ ] Create PR using GitHub CLI. Write title and body in **English**.
    // turbo
