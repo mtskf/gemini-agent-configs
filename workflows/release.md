@@ -10,6 +10,10 @@ Workflow for project release. Execute this when requested to "release" or "bump 
     - `minor`: New features
     - `major`: Breaking changes
 
+    - [ ] **Pre-Flight Check**: Ensure you are on `main` and have no uncommitted changes.
+    // turbo
+    if [ "$(git rev-parse --abbrev-ref HEAD)" != "main" ]; then echo "Error: Must be on main branch."; exit 1; fi && git diff --quiet || { echo "Error: Uncommitted changes detected."; exit 1; }
+
 2.  **Update `package.json` & Tag**
     - [ ] Run `npm/pnpm version` command.
     // turbo

@@ -15,10 +15,13 @@ This workflow automates the process from committing changes to creating a Pull R
    - [ ] **Consistency Check**: Verify that `.env`, `.env.example`, `GUIDE.md`, and `SPEC.md` are synchronized regarding configuration variables.
    - [ ] **Optimization**: Review `dev-docs/LESSONS.md`, `dev-docs/DECISIONS.md`, and `dev-docs/ARCHITECTURE.md` to remove or merge obsolete items.
 
-2. **Verification**
-    - [ ] Run tests. **Abort immediately** if tests fail.
-    // turbo
-    pnpm test || exit 1
+2. **Quality Check**
+   - [ ] Run linting if available.
+   // turbo
+   if grep -q '"lint":' package.json; then pnpm run lint; else echo "No lint script found."; fi
+   - [ ] Run tests. **Abort immediately** if tests fail.
+   // turbo
+   pnpm test || exit 1
 
 3. **Commit & Push (with Verification)**
    - [ ] **Self-Check**: Ask yourself:

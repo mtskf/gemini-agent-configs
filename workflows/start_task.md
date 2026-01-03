@@ -20,7 +20,10 @@ Execute this workflow to create a topic branch when starting a new feature or bu
 
 4. **Sync Main & Load Context**
    // turbo
-   git checkout main && git pull origin main && cat dev-docs/LESSONS.md dev-docs/TECH_STACK.md dev-docs/ARCHITECTURE.md dev-docs/DECISIONS.md README.md 2>/dev/null || echo "Docs check partial."
+   git checkout main && git pull origin main
+
+   // turbo
+   echo "Loading context..." && cat dev-docs/LESSONS.md dev-docs/TECH_STACK.md dev-docs/ARCHITECTURE.md dev-docs/DECISIONS.md README.md 2>/dev/null || echo "Some context files are missing, skipping."
 
 5. **Create & Switch Branch**
    - [ ] Create and checkout the determined branch.

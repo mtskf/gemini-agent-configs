@@ -16,5 +16,7 @@ Workflow to update local environment after PR merge. Switches to `main`, pulls c
 
 3. **Delete Merged Branches (Optional)**
    - [ ] List and delete merged local branches (user confirmation recommended).
-   // turbo
+   - [ ] List merged branches.
+   git branch --merged main | grep -v "^\*" | grep -v "main"
+   - [ ] Delete merged branches.
    git branch --merged main | grep -v "^\*" | grep -v "main" | xargs -r git branch -d

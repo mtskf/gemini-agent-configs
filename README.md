@@ -9,18 +9,23 @@ Reference: [Antigravity x Gemini を "Proactive Tech Lead" に育てる試みと
 
 ## 📂 Structure
 
-- **`rules.md`**: **Agent's Rules of Conduct (Generic Rules)**.
-  - **Meta-Protocol**: Pre-Flight Check (branch verification), Self-Correction.
-  - **Agentic Mode**: Task management, Artifact usage.
-  - **Engineering Standards**: Safety First (Main Branch protection), Lint & Test, Image Asset Rules.
-  - **Documentation Hygiene**: Optimization & Archiving.
+- **`rules.md`**: **Agent's Rules of Conduct (Core Protocols)**.
+  - **Core Protocols**: Branch Safety, Implementation Scope, specific communication rules.
+  - **Engineering Standards**: Priority (Artifacts > Code), Quality Assurance.
+  - **Workflows Table**: Quick reference for available automation.
+
+- **`rules/`**: **Specific Rule Sets**.
+  - `coding-style.md`: Code style guidelines.
+  - `image-gen.md`: Image generation prompt rules.
+  - `testing.md`: Testing rules (Mocking requirements).
 
 - **`workflows/`**: **Automation Workflows**.
-  - `start_task.md`: Start Task (Create branch, Load context, Check scripts)
-  - `finalize_task.md`: Complete Task (Create PR, Update docs, Cleanup)
-  - `sync_main.md`: Sync (Pull Main, Prune, Submodules)
-  - `lint_and_test.md`: Quality Check (Lint, Test)
-  - `release.md`: Release Procedure (Version bump, Tagging)
+  - `start_task.md`: **Start Task** (Context loading, Uncommitted change check).
+  - `finalize_task.md`: **Task Completion** (Lint, Test, PR, Doc update).
+  - `sync_main.md`: **Sync** (Safe branch cleanup, Update).
+  - `lint_and_test.md`: **Quality Check** (Auto-run all tests/lints).
+  - `release.md`: **Release** (Strict branch checks, Version bump).
+  - `tdd.md`: **TDD** (Red-Green-Refactor cycle, Scaffold generation).
 
 ## 📝 Managed Documentation
 
