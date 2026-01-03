@@ -12,6 +12,7 @@ This workflow automates the process from committing changes to creating a Pull R
    - [ ] **Specs**: Check `dev-docs/SPEC.md`. Create if missing. Update to reflect **current functional specifications**.
    - [ ] **Decisions**: Add ADR to `dev-docs/DECISIONS.md` if architectural changes were made.
    - [ ] **Readme**: Update `README.md` if new features were added or modified.
+   - [ ] **Consistency Check**: Verify that `.env`, `.env.example`, `GUIDE.md`, and `SPEC.md` are synchronized regarding configuration variables.
    - [ ] **Optimization**: Review `dev-docs/LESSONS.md`, `dev-docs/DECISIONS.md`, and `dev-docs/ARCHITECTURE.md` to remove or merge obsolete items.
 
 2. **Verification**
